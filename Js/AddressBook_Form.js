@@ -47,7 +47,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         }
     });
 
-   
+
 
     const emailElement = document.querySelector('#email');
     const emailError = document.querySelector('.email-error');
@@ -61,4 +61,33 @@ window.addEventListener('DOMContentLoaded', (event) => {
         }
 
     });
+    const save = (event) => {
+        //     event.preventDefault();
+        //   event.stopPropagation();
+        try {
+            setContactObject();
+        } catch (e) {
+            console.log(e);
+            return;
+        }
+    }
+
+    const setContactObject = () => {
+        let contactObject = new Contact()
+        let names = getInputValueById('#name').split(" ");
+        contactObject._firstName = names[0];
+        contactObject._lastName = names[1];
+        contactObject._address = getInputValueById('#address');
+        contactObject._city = getInputValueById('#city');
+        contactObject._state = getInputValueById('#state');
+        contactObject._zip = getInputValueById('#zip');
+        contactObject._phone = getInputValueById('#phone');
+        contactObject._email = getInputValueById('#email');
+        alert(contactObject.toString())
+    }
+
+    const getInputValueById = (id) => {
+        let value = document.querySelector(id).value;
+        return value;
+    }
 })
