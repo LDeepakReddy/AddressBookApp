@@ -1,3 +1,4 @@
+let contactObject = {}
 window.addEventListener('DOMContentLoaded', (event) => {
     const name = document.querySelector('#name');
     const nameError = document.querySelector('.name-error');
@@ -62,8 +63,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     });
     const save = (event) => {
-        //     event.preventDefault();
-        //   event.stopPropagation();
+    
         try {
             setContactObject();
         } catch (e) {
@@ -73,7 +73,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     }
 
     const setContactObject = () => {
-        let contactObject = new Contact()
+    
         let names = getInputValueById('#name').split(" ");
         contactObject._firstName = names[0];
         contactObject._lastName = names[1];
@@ -83,7 +83,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         contactObject._zip = getInputValueById('#zip');
         contactObject._phone = getInputValueById('#phone');
         contactObject._email = getInputValueById('#email');
-        alert(contactObject.toString())
+        alert(JSON.stringify(contactObject))
     }
 
     const getInputValueById = (id) => {
