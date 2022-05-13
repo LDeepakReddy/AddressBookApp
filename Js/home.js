@@ -56,3 +56,13 @@ const remove = (data) => {
     createInnerHTML();
     alert("Person data deleted successfully..!");
 }
+
+
+// //UC6 -Update data
+const update = (data) => {
+    let updatePerson = addressBookList.find(contactData => contactData._id == data.id);
+    if (!updatePerson)
+        return;
+    localStorage.setItem('edit-person', JSON.stringify(updatePerson));
+    window.location.replace(site_properties.addBook);
+}
