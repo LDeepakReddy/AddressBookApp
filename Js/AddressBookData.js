@@ -22,7 +22,7 @@ class AddressBookData {
         return this._phone;
     }
     set phone(phone) {
-        const phoneRegex = RegExp('^[+][1-9]{2}[0-9]{10}$');
+        const phoneRegex =  RegExp('^[+][1-9]{2}[-][0-9]{10}$');
         if (phoneRegex.test(phone)) {
             this._phone = phone;
         } else {

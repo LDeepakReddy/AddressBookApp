@@ -13,7 +13,7 @@ function validationOnField() {
     const phoneError = document.querySelector('.phone-error');
     const addressError = document.querySelector('.address-error');
 
-    name.addEventListener('input', function() {
+    name.addEventListener('input', function () {
         try {
             let contactData = new AddressBookData();
             contactData.name = name.value;
@@ -23,7 +23,7 @@ function validationOnField() {
         }
     });
 
-    phone.addEventListener('input', function() {
+    phone.addEventListener('input', function () {
         try {
             let contactData = new AddressBookData();
             contactData.phone = phone.value;
@@ -33,7 +33,7 @@ function validationOnField() {
         }
     });
 
-    address.addEventListener('input', function() {
+    address.addEventListener('input', function () {
         try {
             let contactData = new AddressBookData();
             contactData.address = address.value;
@@ -49,7 +49,7 @@ const save = (event) => {
     event.preventDefault();
     event.stopPropagation();
     let addressBook = createAddressBook();
-    addAndUpdateLocalStorage(addressBook);
+    addAndUpdateLocalStorage(addressBook); // save updated data into local storage 
     alert("Contact added of : " + addressBook._name);
     window.location.replace(site_properties.home);
 }

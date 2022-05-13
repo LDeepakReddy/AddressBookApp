@@ -5,13 +5,13 @@
 body {
     margin: 0;
     height: 100%;
-    background-color: #f7f7f7;
+    background-color: #708a72;
     font-family: 'Times New Roman', Times, serif;
 }
 
 .header-text {
     padding: 12px 0;
-    background-color: #ffffff;
+    background-color: #93c0a7;
     font: normal normal bold 18px/20px;
     display: flex;
     flex-direction: row;
@@ -103,7 +103,7 @@ body {
     min-width: 800px;
     border-collapse: separate;
     border-spacing: 0 15px;
-    border: 0px solid green;
+    border: 0px solid rgb(11, 12, 11);
 }
 
 td,
